@@ -6,17 +6,17 @@ $c = '10';
 
 if ($a < $b) {
     // TODO: Replace the blanks with the correct description
-    echo "$a is ____ $b\n";
+    echo "$a is less than $b\n";
 }
 
 if ($b > $a) {
     // TODO: Replace the blanks with the correct description
-    echo "$b is ____ $a\n";
+    echo "$b is greater than $a\n";
 }
 
 if ($b >= $c) {
     // TODO: Replace the blanks with the correct description
-    echo "$b is ____ $c\n";
+    echo "$b is greater than or equal to $c\n";
 }
 
 if ($b <= $c) {
