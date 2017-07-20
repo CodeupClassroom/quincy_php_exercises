@@ -1,19 +1,52 @@
 <?php
 
-$numbers = ['zero', 'one', 'two', 'three', 'four', 'five'];
+// 1. Construct a loop that iterates through each value and outputs its type as either integer, float, boolean, array, null, or string.
 
-/* for ($i = 0; $i < count($numbers); $i++) { */
-/*     $number = $numbers[$i]; */
-/*     echo 'The number is: ' . $number . '!' . PHP_EOL; */
-/* } */
+// 2. Construct a loop that iterates through each value and outputs only values with a type that is scalar.
+
+// output
+    // Sgt. Pepper
+    // 11
+
+    // Array (loop through inner array display here)
+    // 3.14
+    // 12 + 7
+
+    // 11
+
+/** HINT - use PHP functions like is_bool(), is_scalar(), is_float() */
+
+$things = array('Sgt. Pepper', "11", null, array(1,2,3), 3.14, "12 + 7", false, (string) 11);
 
 
-foreach ($numbers as $number) {
-    echo 'The number is: ' . $number . '!' . PHP_EOL;
-}
+// foreach($things as $thing) {
+//     if(is_integer($thing)) {
+//         echo "$thing is an integer" . PHP_EOL;
+//     } else if (is_float($thing)) {
+//         echo "$thing is a float" . PHP_EOL;
+//     } else if(is_bool($thing)) {
+//         echo "$thing is a boolean" . PHP_EOL;
+//     } else if (is_array($thing)) {
+//         echo "$thing is an array" . PHP_EOL;
+//     } else if(is_null($thing)) {
+//         echo "null" . PHP_EOL;
+//     } else if(is_string($thing)) {
+//         echo "$thing is a string" . PHP_EOL;
+//     }
+// }
 
-$animalTypes = array('dogs', 'cats', 'birds', 'narwhals');
+// foreach($things as $thing) {
+//     if(is_scalar($thing)) {
+//         echo $thing . PHP_EOL;
+//     }
+// }
 
-foreach ($animalTypes as $animalType) {
-    echo 'The totally real existent animal type is: ' . $animalType . '!' . PHP_EOL;
+foreach($things as $thing) {
+    if(is_array($thing)) {
+        foreach($thing as $element) {
+            echo $element . "\t";
+        }
+    } else {
+        echo $thing . PHP_EOL;
+    }
 }
