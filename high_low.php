@@ -1,7 +1,19 @@
 <?php
 
+// make sure that we are passed the correct # of args
+if ($argc !== 3) {
+    echo 'Please pass the minimum and maximum for the game.' . PHP_EOL;
+    echo PHP_EOL;
+    echo 'Usage:' . PHP_EOL;
+    echo '    php high_low.php <min> <max>' . PHP_EOL;
+    exit;
+}
+
+$min = $argv[1];
+$max = $argv[2];
+
 // game picks a random number between 1 and 100.
-$secretNumber = rand(1, 100);
+$secretNumber = rand($min, $max);
 $numberOfGuesses = 0;
 echo "The secret number is: $secretNumber!" . PHP_EOL;
 
