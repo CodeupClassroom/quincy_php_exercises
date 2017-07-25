@@ -42,12 +42,14 @@ function numberOfValuesInCommon($array1, $array2)
 
     // $value first time through the array is the string 'Tina'
     foreach($array1 as $value) {
-        if(isInArray($value, $array2)) {
+        if(array_search($value, $array2) === false) {
             $count++;
         }
     }
-
     return $count;
 }
+
+
+
 
 echo "The number of values that \$names and \$compare have in common is " . numberOfValuesInCommon($names, $compare) . PHP_EOL;
