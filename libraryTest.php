@@ -13,6 +13,7 @@ class PHPAssessmentTests extends PHPUnit_Framework_TestCase
             "Expected isEven() function to be present."
         );
 
+        // ensure the funciton returns the correct data type
         $this->assertTrue(
             is_bool(isEven(3)),
             "Expected isEven() function to return a boolean."
@@ -28,6 +29,11 @@ class PHPAssessmentTests extends PHPUnit_Framework_TestCase
             "Expected isEven(10) to return true."
         );
 
+        $this->assertTrue(
+            isEven('10'),
+            "Expected isEven('10') to return true."
+        );
+
         $this->assertFalse(
             isEven(5),
             "Expected isEven(5) to return false."
@@ -37,7 +43,6 @@ class PHPAssessmentTests extends PHPUnit_Framework_TestCase
             isEven("Bob"),
             "Expected isEven('Bob') to return false."
         );
-
     }
 
     public function test_is_vowel()
@@ -46,6 +51,10 @@ class PHPAssessmentTests extends PHPUnit_Framework_TestCase
             function_exists('isVowel'),
             "Expected isVowel() function to be present"
         );
+
+        $this->assertFalse(
+            isVowel([1, 2, 3]),
+            "Expected isVowel([1, 2, 3]) to return false");
 
         $this->assertTrue(
             is_bool(isVowel('a')),
@@ -63,8 +72,8 @@ class PHPAssessmentTests extends PHPUnit_Framework_TestCase
         );
 
         $this->assertTrue(
-            isVowel('i'),
-            "Expected isVowel('i') to return true."
+            isVowel('I'),
+            "Expected isVowel('I') to return true."
         );
 
         $this->assertTrue(
@@ -73,8 +82,8 @@ class PHPAssessmentTests extends PHPUnit_Framework_TestCase
         );
 
         $this->assertTrue(
-            isVowel('u'),
-            "Expected isVowel('u') to return true."
+            isVowel('U'),
+            "Expected isVowel('U') to return true."
         );
 
         $this->assertFalse(
@@ -90,21 +99,25 @@ class PHPAssessmentTests extends PHPUnit_Framework_TestCase
 
     public function test_first()
     {
+        // make sure the function exists
         $this->assertTrue(
             function_exists('first'),
             "Expected first() function to be defined."
         );
         
+        // should return first character of a string.
         $this->assertEquals(
             "B", first('Bob'),
             "Expected first('Bob') to return 'B'."
         );
         
+        // should return first element of an array.
         $this->assertEquals(
             1, first([1, 2, 3]),
             "Expected first([1, 2, 3]) to return 1."
         );
 
+        // should return first character of a string.
         $this->assertEquals(
             'P', first('Programming'),
             "Expected first(Programming) to return 'P'."
@@ -135,7 +148,7 @@ class PHPAssessmentTests extends PHPUnit_Framework_TestCase
         );
     }
 
-    public function last()
+    public function test_last()
     {
         $this->assertTrue(
             function_exists('last'),
