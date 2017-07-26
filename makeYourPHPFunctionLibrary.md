@@ -1,5 +1,6 @@
 # Make your own PHP library of helpful functions!
-## Make a file called library.php
+
+Step 1. Make a file called library.php
 
 Write a function called isEven that takes in a variable and returns true or false if the provided input is evenly divisible by two or not.
 
